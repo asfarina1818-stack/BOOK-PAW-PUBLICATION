@@ -1,0 +1,1 @@
+console.log("Blink Book Author Gallery ready");

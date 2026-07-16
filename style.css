@@ -1,0 +1,5 @@
+body{margin:0;font-family:Arial,sans-serif;background:#fff5fb}
+.header{background:linear-gradient(135deg,#FF1694,#FF69B4);color:#fff;text-align:center;padding:40px}
+nav a{color:#fff;text-decoration:none;margin:0 10px;background:#FF1694;padding:10px 18px;border-radius:20px}
+.container{width:90%;margin:40px auto}
+.card{background:#fff;border-top:8px solid #FF1694;border-radius:18px;padding:20px;margin:15px 0;box-shadow:0 4px 10px rgba(0,0,0,.12)}
