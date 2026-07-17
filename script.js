@@ -101,13 +101,11 @@ function editKarya(){
         karya.innerText
     );
 
-    if(newKarya){
-
-        const senarai = newKarya.split(",");
+   if(newKarya){
 
         karya.innerHTML = "";
 
-        senarai.forEach(function(item){
+        newKarya.split(",").forEach(function(item){
 
             let li = document.createElement("li");
 
@@ -118,10 +116,7 @@ function editKarya(){
         });
 
 
-        localStorage.setItem(
-            "karya",
-            newKarya
-        );
+       localStorage.setItem("karya", newKarya);
 
     }
 
