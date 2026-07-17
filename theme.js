@@ -44,3 +44,16 @@ function closeTheme(){
 document.getElementById("themeBox").style.display="none";
 
 }
+
+function openTheme(){
+
+document.getElementById("themeBox").style.display="flex";
+
+}
+
+
+function closeTheme(){
+
+document.getElementById("themeBox").style.display="none";
+
+}
