@@ -147,3 +147,35 @@ window.addEventListener("load", function(){
     }
 
 });
+
+function editPencapaian(){
+
+    const pencapaian = document.getElementById("pencapaian");
+
+    const newPencapaian = prompt(
+        "Masukkan pencapaian (pisahkan dengan koma):",
+        pencapaian.innerText
+    );
+
+    if(newPencapaian){
+
+        pencapaian.innerHTML = "";
+
+        newPencapaian.split(",").forEach(function(item){
+
+            let li = document.createElement("li");
+
+            li.innerHTML = item.trim();
+
+            pencapaian.appendChild(li);
+
+        });
+
+        localStorage.setItem(
+            "pencapaian",
+            newPencapaian
+        );
+
+    }
+
+}
