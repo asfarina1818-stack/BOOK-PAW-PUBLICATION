@@ -55,3 +55,39 @@ window.onload = function(){
     }
 
 }
+function editBio(){
+
+    const bio = document.getElementById("biodata");
+
+    const newBio = prompt(
+        "Kemaskini biodata penulis:",
+        bio.innerHTML
+    );
+
+    if(newBio){
+
+        bio.innerHTML = newBio;
+
+        localStorage.setItem(
+            "biodata",
+            newBio
+        );
+
+    }
+
+}
+
+
+window.addEventListener("load", function(){
+
+    const bio = document.getElementById("biodata");
+
+    const savedBio = localStorage.getItem("biodata");
+
+    if(savedBio && bio){
+
+        bio.innerHTML = savedBio;
+
+    }
+
+});
