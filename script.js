@@ -284,3 +284,35 @@ localStorage.setItem("pencapaian",pencapaian);
 
 
 }
+function changeTheme(){
+
+let theme = document.getElementById("themeSelect").value;
+
+document.body.className = theme;
+
+localStorage.setItem(
+"theme",
+theme
+);
+
+}
+
+
+
+window.addEventListener("load",function(){
+
+let savedTheme = localStorage.getItem("theme");
+
+if(savedTheme){
+
+document.body.className = savedTheme;
+
+let select = document.getElementById("themeSelect");
+
+if(select){
+select.value = savedTheme;
+}
+
+}
+
+});
