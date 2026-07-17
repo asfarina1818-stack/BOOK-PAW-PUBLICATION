@@ -8,263 +8,260 @@
 <title>Blink Book Author Gallery</title>
 
 <link rel="stylesheet" href="style.css">
-
 </head>
 
+<body>
+
+<!-- BUTANG THEME -->
 <button class="theme-btn" onclick="openTheme()">
-🎨 Theme
+Theme
 </button>
 
 
+<!-- POPUP THEME -->
 <div class="theme-overlay" id="themeBox">
 
-<div class="theme-popup">
+    <div class="theme-popup">
 
-<div class="theme-popup">
+        <div class="theme-popup-header">
 
-    <div class="theme-popup-header">
-        <div>
-            <h2>Appearance</h2>
-            <p>Customize the website theme and background.</p>
+            <div>
+                <h2>Appearance</h2>
+                <p>Customize the website theme and background.</p>
+            </div>
+
+            <button
+                type="button"
+                class="popup-close-icon"
+                onclick="closeTheme()">
+                ×
+            </button>
+
         </div>
 
-        <button class="popup-close-icon" onclick="closeTheme()">
-            ×
-        </button>
-    </div>
 
-    <div class="theme-section">
-        <h3>Theme Color</h3>
+        <!-- PILIH WARNA -->
+        <div class="theme-section">
 
-        <div class="color-list">
-            <button onclick="changeTheme('#ff0080')">Pink</button>
-            <button onclick="changeTheme('#7c3aed')">Purple</button>
-            <button onclick="changeTheme('#2563eb')">Blue</button>
-            <button onclick="changeTheme('#10b981')">Green</button>
-            <button onclick="changeTheme('#f59e0b')">Orange</button>
+            <h3>Theme Color</h3>
+
+            <div class="color-list">
+
+                <button
+                    type="button"
+                    onclick="changeTheme('#ff0080')">
+                    Pink
+                </button>
+
+                <button
+                    type="button"
+                    onclick="changeTheme('#7c3aed')">
+                    Purple
+                </button>
+
+                <button
+                    type="button"
+                    onclick="changeTheme('#2563eb')">
+                    Blue
+                </button>
+
+                <button
+                    type="button"
+                    onclick="changeTheme('#10b981')">
+                    Green
+                </button>
+
+                <button
+                    type="button"
+                    onclick="changeTheme('#f59e0b')">
+                    Orange
+                </button>
+
+            </div>
+
         </div>
-    </div>
 
-    <div class="theme-section">
-        <h3>Custom Color</h3>
 
-        <input
-            type="color"
-            onchange="changeTheme(this.value)"
-        >
-    </div>
+        <!-- CUSTOM COLOR -->
+        <div class="theme-section">
 
-    <div class="theme-section">
-        <h3>Background Image</h3>
-
-        <label class="upload-btn">
-            Choose Image
+            <h3>Custom Color</h3>
 
             <input
-                type="file"
-                id="bgUpload"
-                accept="image/*"
-                onchange="previewBackground(event)"
-                hidden
-            >
-        </label>
+                type="color"
+                value="#ff0080"
+                onchange="changeTheme(this.value)">
 
-        <div id="previewBox">
-            No image selected
         </div>
+
+
+        <!-- BACKGROUND IMAGE -->
+        <div class="theme-section">
+
+            <h3>Background Image</h3>
+
+            <label class="upload-btn">
+
+                Choose Image
+
+                <input
+                    type="file"
+                    id="bgUpload"
+                    accept="image/*"
+                    onchange="previewBackground(event)"
+                    hidden>
+
+            </label>
+
+            <div id="previewBox">
+                No image selected
+            </div>
+
+        </div>
+
+
+        <!-- BUTANG RESET DAN APPLY -->
+        <div class="theme-actions">
+
+            <button
+                type="button"
+                class="secondary-action"
+                onclick="removeBackground()">
+                Reset
+            </button>
+
+            <button
+                type="button"
+                class="primary-action"
+                onclick="applyBackground()">
+                Apply
+            </button>
+
+        </div>
+
     </div>
 
-    <div class="theme-actions">
-        <button class="secondary-action" onclick="removeBackground()">
-            Reset
-        </button>
-
-        <button class="primary-action" onclick="applyBackground()">
-            Apply
-        </button>
-    </div>
-
 </div>
 
-<hr>
 
-<h3>Background Image</h3>
-
-<label class="upload-btn">
-
-Choose Image
-
-<input
-type="file"
-accept="image/*"
-id="bgUpload"
-onchange="previewBackground(event)"
-hidden>
-
-</label>
-
-<div id="previewBox">
-
-No image selected
-
-</div>
-
-<button class="apply-btn"
-onclick="applyBackground()">
-
-Apply Background
-
-</button>
-
-<button class="close-theme"
-onclick="closeTheme()">
-
-Close
-
-</button>
-
-</div>
-
-<h3>Custom Color</h3>
-
-<input 
-type="color"
-onchange="changeTheme(this.value)"
->
-
-
-<br><br>
-
-<button class="close-theme" onclick="closeTheme()">
-Close
-</button>
-
-
-</div>
-
-</div>
-
+<!-- HEADER -->
 <header class="header">
 
-<h2>BLINK BOOK</h2>
+    <h2>BLINK BOOK</h2>
 
-<h1>📚 Author Gallery</h1>
+    <h1>📚 Author Gallery</h1>
 
-<p>Kenali penulis, karya dan inspirasi di sebalik buku Blink Book</p>
+    <p>
+        Kenali penulis, karya dan inspirasi di sebalik buku Blink Book
+    </p>
 
-<nav>
-<a href="#">Home</a>
-<a href="#">Authors</a>
-<a href="#">Books</a>
-</nav>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#authors">Authors</a>
+        <a href="#">Books</a>
+    </nav>
 
 </header>
 
 
-<section class="container">
+<!-- AUTHORS -->
+<section class="container" id="authors">
 
-<h2>Our Authors</h2>
+    <h2>Our Authors</h2>
 
-<div class="author-grid">
+    <div class="author-grid">
 
-<a class="card" href="syak.html">
-<img src="images/syak-mazlan.jpg.png" alt="Syak Mazlan">
-<h3>Syak Mazlan</h3>
-<p>Penulis Blink Book</p>
-</a>
+        <a class="card" href="syak.html">
 
-<a class="card" href="ilyas.html">
-<img src="images/ilyas-saaid.jpg.png" alt="Ilyas Saaid">
-<h3>Ilyas Saaid</h3>
-<p>Penulis Blink Book</p>
-</a>
+            <img
+                src="images/syak-mazlan.jpg.png"
+                alt="Syak Mazlan">
 
-<a class="card" href="shasya.html">
-<img src="images/shasya-ali.jpg.png" alt="Shasya Ali">
-<h3>Shasya Ali</h3>
-<p>Penulis Blink Book</p>
-</a>
+            <h3>Syak Mazlan</h3>
 
-<a class="card" href="imran.html">
-<img src="images/imran-rosli.jpg.jpg" alt="Imran Rosli">
-<h3>Imran Rosli</h3>
-<p>Penulis Blink Book</p>
-</a>
+            <p>Penulis Blink Book</p>
 
-<a class="card" href="nija.html">
-<img src="images/Nija.jpg.jpg" alt="Nija">
-<h3>Nija</h3>
-<p>Penulis Blink Book</p>
-</a>
+        </a>
 
-<a class="card" href="faizal.html">
 
-<img src="images/faizal-Hakimi.jpg.jpg" alt="Faizal Hakimi">
+        <a class="card" href="ilyas.html">
 
-<h3>Faizal Hakimi</h3>
+            <img
+                src="images/ilyas-saaid.jpg.png"
+                alt="Ilyas Saaid">
 
-<p>Penulis Blink Book</p>
+            <h3>Ilyas Saaid</h3>
 
-</a>
-</div>
+            <p>Penulis Blink Book</p>
+
+        </a>
+
+
+        <a class="card" href="shasya.html">
+
+            <img
+                src="images/shasya-ali.jpg.png"
+                alt="Shasya Ali">
+
+            <h3>Shasya Ali</h3>
+
+            <p>Penulis Blink Book</p>
+
+        </a>
+
+
+        <a class="card" href="imran.html">
+
+            <img
+                src="images/imran-rosli.jpg.jpg"
+                alt="Imran Rosli">
+
+            <h3>Imran Rosli</h3>
+
+            <p>Penulis Blink Book</p>
+
+        </a>
+
+
+        <a class="card" href="nija.html">
+
+            <img
+                src="images/Nija.jpg.jpg"
+                alt="Nija">
+
+            <h3>Nija</h3>
+
+            <p>Penulis Blink Book</p>
+
+        </a>
+
+
+        <a class="card" href="faizal.html">
+
+            <img
+                src="images/faizal-Hakimi.jpg.jpg"
+                alt="Faizal Hakimi">
+
+            <h3>Faizal Hakimi</h3>
+
+            <p>Penulis Blink Book</p>
+
+        </a>
+
+    </div>
 
 </section>
 
 
+<!-- FOOTER -->
 <footer>
 
-<p>© Blink Book Author Gallery</p>
+    <p>© Blink Book Author Gallery</p>
 
 </footer>
-<div class="theme-overlay" id="themeBox">
-
-<div class="theme-popup">
-
-<h2>🎨 Pilih Tema</h2>
-
-<div class="color-list">
-
-<button onclick="changeTheme('#ff0080')">
-🌸 Pink
-</button>
-
-<button onclick="changeTheme('#7c3aed')">
-💜 Purple
-</button>
-
-<button onclick="changeTheme('#2563eb')">
-💙 Blue
-</button>
-
-<button onclick="changeTheme('#10b981')">
-💚 Green
-</button>
-
-<button onclick="changeTheme('#f59e0b')">
-🧡 Orange
-</button>
-
-</div>
-
-<h3>Custom Color</h3>
-
-<input 
-type="color" 
-onchange="changeTheme(this.value)">
 
 
-<br><br>
-
-<button onclick="closeTheme()">
-Tutup
-</button>
-
-
-</div>
-
-</div>
-  
 <script src="theme.js"></script>
-  
+
 </body>
 </html>
