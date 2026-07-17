@@ -1351,6 +1351,54 @@ AUTHOR POPUP
         var(--theme-color),
         var(--theme-second)
     );
+    /* ===== SEARCH BAR ===== */
+
+.search-box{
+    position:relative;
+    width:100%;
+    max-width:600px;
+    margin:35px auto;
+}
+
+.search-box input{
+    width:100%;
+    padding:16px 55px;
+    border:2px solid #e5e7eb;
+    border-radius:50px;
+    font-size:17px;
+    outline:none;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.search-icon{
+    position:absolute;
+    left:20px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:18px;
+}
+
+.clear-search{
+    position:absolute;
+    right:12px;
+    top:50%;
+    transform:translateY(-50%);
+
+    width:34px;
+    height:34px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#f3f4f6;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.clear-search:hover{
+    background:var(--theme-color);
+    color:white;
+}
     color:#ffffff;
     text-decoration:none;
     font-family:inherit;
