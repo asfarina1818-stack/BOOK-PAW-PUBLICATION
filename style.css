@@ -396,3 +396,55 @@ background:#aee6ff;
 .dark-btn{
 background:#333;
 }
+
+/* ========================= */
+/* MODERN BUTTON STYLE */
+/* ========================= */
+
+.edit-bio,
+.btn{
+
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+
+background:linear-gradient(
+135deg,
+#ff0080,
+#7c3aed
+);
+
+color:white;
+
+border:none;
+
+padding:14px 32px;
+
+border-radius:18px;
+
+font-size:16px;
+
+font-weight:700;
+
+text-decoration:none;
+
+cursor:pointer;
+
+box-shadow:
+0 0 20px rgba(124,58,237,.5);
+
+transition:.3s;
+
+}
+
+
+.edit-bio:hover,
+.btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 0 35px rgba(255,0,128,.8);
+
+}
