@@ -221,3 +221,22 @@ nav a{
     background:#ff0080;
 
 }
+
+.edit-bio{
+
+    margin-top:15px;
+    padding:10px 25px;
+    border:none;
+    background:#ff0080;
+    color:white;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:bold;
+
+}
+
+.edit-bio:hover{
+
+    background:#ff4da6;
+
+}
