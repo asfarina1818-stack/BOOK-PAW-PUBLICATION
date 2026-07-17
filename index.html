@@ -228,18 +228,29 @@ Customize
 
     <div class="author-grid">
 
-        <a class="card" href="syak.html">
+       <div class="card">
 
-            <img
-                src="images/syak-mazlan.jpg.png"
-                alt="Syak Mazlan">
+    <img
+        src="images/syak-mazlan.jpg.png"
+        alt="Syak Mazlan">
 
-            <h3>Syak Mazlan</h3>
+    <h3>Syak Mazlan</h3>
 
-            <p>Penulis Blink Book</p>
+    <p>Penulis Blink Book</p>
 
-        </a>
+    <button
+        type="button"
+        class="more-btn"
+        onclick="openAuthorPopup(
+            'Syak Mazlan',
+            'Penulis Blink Book dan penulis Siri Bola Hero.',
+            'images/syak-mazlan.jpg.png',
+            'syak.html'
+        )">
+        Lihat Selebihnya
+    </button>
 
+</div>
 
         <a class="card" href="ilyas.html">
 
@@ -309,6 +320,31 @@ Customize
 
 </section>
 
+    <!-- AUTHOR POPUP -->
+<div class="author-popup-overlay" id="authorPopup">
+
+    <div class="author-popup">
+
+        <button
+            type="button"
+            class="author-popup-close"
+            onclick="closeAuthorPopup()">
+            ×
+        </button>
+
+        <img id="popupAuthorImage" src="" alt="Author">
+
+        <h2 id="popupAuthorName"></h2>
+
+        <p id="popupAuthorDescription"></p>
+
+        <a id="popupAuthorLink" href="#">
+            Lihat Profil Penuh
+        </a>
+
+    </div>
+
+</div>
 
 <!-- FOOTER -->
 <footer>
