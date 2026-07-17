@@ -1580,5 +1580,151 @@ AUTHOR POPUP
         width:150px;
         height:150px;
     }
+/* =========================
+   MODERN AUTHOR BUTTON
+========================= */
 
+.more-btn{
+    width:100%;
+    margin-top:18px;
+    padding:12px 18px;
+
+    border:none;
+    border-radius:14px;
+
+    background:linear-gradient(
+        135deg,
+        var(--theme-color),
+        var(--theme-second)
+    );
+
+    color:#ffffff;
+    font-size:14px;
+    font-weight:700;
+    font-family:inherit;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 24px rgba(79,70,229,.28);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        opacity .25s ease;
+}
+
+.more-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 14px 30px rgba(79,70,229,.38);
+}
+
+.more-btn:active{
+    transform:translateY(0);
+}
+    /* =========================
+   MODERN DARK AUTHOR CARDS
+========================= */
+
+.author-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+}
+
+.card{
+    background:rgba(15,23,42,.88);
+
+    border:1px solid rgba(148,163,184,.18);
+    border-radius:22px;
+
+    padding:22px;
+
+    color:#f8fafc;
+
+    box-shadow:
+        0 18px 40px rgba(2,6,23,.24);
+
+    overflow:hidden;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+
+    border-color:rgba(99,102,241,.65);
+
+    box-shadow:
+        0 24px 50px rgba(2,6,23,.35);
+}
+
+.card img{
+    width:100%;
+    height:260px;
+
+    object-fit:cover;
+
+    border-radius:16px;
+
+    margin-bottom:18px;
+}
+
+.card h3{
+    color:#ffffff;
+    font-size:20px;
+    margin-bottom:7px;
+}
+
+.card p{
+    color:#94a3b8;
+    font-size:14px;
+    line-height:1.6;
+}
+    body{
+    background:
+        linear-gradient(
+            to bottom,
+            #020617,
+            #0f172a,
+            #1e1b4b
+        );
+
+    color:#f1f5f9;
+
+    min-height:100vh;
+    background-attachment:fixed;
+}
+
+.container h2{
+    color:#ffffff;
+}
+    @media (max-width:900px){
+
+    .author-grid{
+        grid-template-columns:repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width:600px){
+
+    .author-grid{
+        grid-template-columns:1fr;
+    }
+
+    .card img{
+        height:240px;
+    }
+
+    .more-btn{
+        padding:13px 18px;
+    }
+
+}
 }
