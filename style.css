@@ -1380,3 +1380,28 @@ AUTHOR POPUP
     }
 
 }
+/* SEARCH BAR */
+
+.search-box{
+    display:flex;
+    justify-content:center;
+    margin:30px 0 40px;
+}
+
+.search-box input{
+    width:100%;
+    max-width:480px;
+    padding:15px 22px;
+    border:2px solid #e5e7eb;
+    border-radius:50px;
+    background:white;
+    font-size:16px;
+    outline:none;
+    box-shadow:0 10px 25px rgba(15,23,42,.08);
+    transition:.3s;
+}
+
+.search-box input:focus{
+    border-color:var(--theme-color);
+    box-shadow:0 12px 30px rgba(15,23,42,.14);
+}
