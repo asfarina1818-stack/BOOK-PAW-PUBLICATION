@@ -314,3 +314,229 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
 });
+/* =========================
+BANNER BACKGROUND IMAGE
+========================= */
+
+const bannerImageInput = document.getElementById("bannerImageInput");
+const mainBanner = document.getElementById("mainBanner");
+const bannerPreview = document.getElementById("bannerPreview");
+
+if (bannerImageInput) {
+
+    bannerImageInput.addEventListener("change", function () {
+
+        const file = this.files[0];
+
+        if (!file) return;
+
+        if (!file.type.startsWith("image/")) {
+            alert("Please choose an image file.");
+            return;
+        }
+
+        const reader = new FileReader();
+
+        reader.onload = function (event) {
+
+            const bannerImage = event.target.result;
+
+            localStorage.setItem("bannerBackgroundImage", bannerImage);
+
+            if (mainBanner) {
+                mainBanner.style.backgroundImage =
+                    `linear-gradient(rgba(0,0,0,.28), rgba(0,0,0,.28)), url("${bannerImage}")`;
+
+                mainBanner.style.backgroundSize = "cover";
+                mainBanner.style.backgroundPosition = "center";
+                mainBanner.style.backgroundRepeat = "no-repeat";
+            }
+
+            if (bannerPreview) {
+                bannerPreview.style.backgroundImage = `url("${bannerImage}")`;
+                bannerPreview.textContent = "";
+            }
+
+        };
+
+        reader.readAsDataURL(file);
+
+    });
+
+}
+
+
+/* LOAD SAVED BANNER IMAGE */
+
+const savedBannerImage =
+    localStorage.getItem("bannerBackgroundImage");
+
+if (savedBannerImage) {
+
+    if (mainBanner) {
+        mainBanner.style.backgroundImage =
+            `linear-gradient(rgba(0,0,0,.28), rgba(0,0,0,.28)), url("${savedBannerImage}")`;
+
+        mainBanner.style.backgroundSize = "cover";
+        mainBanner.style.backgroundPosition = "center";
+        mainBanner.style.backgroundRepeat = "no-repeat";
+    }
+
+    if (bannerPreview) {
+        bannerPreview.style.backgroundImage =
+            `url("${savedBannerImage}")`;
+
+        bannerPreview.textContent = "";
+    }
+
+}/* =========================
+BANNER BACKGROUND IMAGE
+========================= */
+
+const bannerImageInput = document.getElementById("bannerImageInput");
+const mainBanner = document.getElementById("mainBanner");
+const bannerPreview = document.getElementById("bannerPreview");
+
+if (bannerImageInput) {
+
+    bannerImageInput.addEventListener("change", function () {
+
+        const file = this.files[0];
+
+        if (!file) return;
+
+        if (!file.type.startsWith("image/")) {
+            alert("Please choose an image file.");
+            return;
+        }
+
+        const reader = new FileReader();
+
+        reader.onload = function (event) {
+
+            const bannerImage = event.target.result;
+
+            localStorage.setItem("bannerBackgroundImage", bannerImage);
+
+            if (mainBanner) {
+                mainBanner.style.backgroundImage =
+                    `linear-gradient(rgba(0,0,0,.28), rgba(0,0,0,.28)), url("${bannerImage}")`;
+
+                mainBanner.style.backgroundSize = "cover";
+                mainBanner.style.backgroundPosition = "center";
+                mainBanner.style.backgroundRepeat = "no-repeat";
+            }
+
+            if (bannerPreview) {
+                bannerPreview.style.backgroundImage = `url("${bannerImage}")`;
+                bannerPreview.textContent = "";
+            }
+
+        };
+
+        reader.readAsDataURL(file);
+
+    });
+
+}
+
+
+/* LOAD SAVED BANNER IMAGE */
+
+const savedBannerImage =
+    localStorage.getItem("bannerBackgroundImage");
+
+if (savedBannerImage) {
+
+    if (mainBanner) {
+        mainBanner.style.backgroundImage =
+            `linear-gradient(rgba(0,0,0,.28), rgba(0,0,0,.28)), url("${savedBannerImage}")`;
+
+        mainBanner.style.backgroundSize = "cover";
+        mainBanner.style.backgroundPosition = "center";
+        mainBanner.style.backgroundRepeat = "no-repeat";
+    }
+
+    if (bannerPreview) {
+        bannerPreview.style.backgroundImage =
+            `url("${savedBannerImage}")`;
+
+        bannerPreview.textContent = "";
+    }
+
+}/* =========================
+BANNER BACKGROUND IMAGE
+========================= */
+
+const bannerImageInput = document.getElementById("bannerImageInput");
+const mainBanner = document.getElementById("mainBanner");
+const bannerPreview = document.getElementById("bannerPreview");
+
+if (bannerImageInput) {
+
+    bannerImageInput.addEventListener("change", function () {
+
+        const file = this.files[0];
+
+        if (!file) return;
+
+        if (!file.type.startsWith("image/")) {
+            alert("Please choose an image file.");
+            return;
+        }
+
+        const reader = new FileReader();
+
+        reader.onload = function (event) {
+
+            const bannerImage = event.target.result;
+
+            localStorage.setItem("bannerBackgroundImage", bannerImage);
+
+            if (mainBanner) {
+                mainBanner.style.backgroundImage =
+                    `linear-gradient(rgba(0,0,0,.28), rgba(0,0,0,.28)), url("${bannerImage}")`;
+
+                mainBanner.style.backgroundSize = "cover";
+                mainBanner.style.backgroundPosition = "center";
+                mainBanner.style.backgroundRepeat = "no-repeat";
+            }
+
+            if (bannerPreview) {
+                bannerPreview.style.backgroundImage = `url("${bannerImage}")`;
+                bannerPreview.textContent = "";
+            }
+
+        };
+
+        reader.readAsDataURL(file);
+
+    });
+
+}
+
+
+/* LOAD SAVED BANNER IMAGE */
+
+const savedBannerImage =
+    localStorage.getItem("bannerBackgroundImage");
+
+if (savedBannerImage) {
+
+    if (mainBanner) {
+        mainBanner.style.backgroundImage =
+            `linear-gradient(rgba(0,0,0,.28), rgba(0,0,0,.28)), url("${savedBannerImage}")`;
+
+        mainBanner.style.backgroundSize = "cover";
+        mainBanner.style.backgroundPosition = "center";
+        mainBanner.style.backgroundRepeat = "no-repeat";
+    }
+
+    if (bannerPreview) {
+        bannerPreview.style.backgroundImage =
+            `url("${savedBannerImage}")`;
+
+        bannerPreview.textContent = "";
+    }
+
+}
