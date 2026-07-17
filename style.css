@@ -196,3 +196,28 @@ nav a{
     background:#ff4da6;
     transform:scale(1.05);
 }
+
+.edit-btn{
+
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 25px;
+    background:#ff4da6;
+    color:white;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:bold;
+
+}
+
+.edit-btn input{
+
+    display:none;
+
+}
+
+.edit-btn:hover{
+
+    background:#ff0080;
+
+}
