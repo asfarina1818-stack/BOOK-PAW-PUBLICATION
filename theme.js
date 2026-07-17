@@ -230,3 +230,87 @@ document.addEventListener(
 
     }
 );
+
+/* =========================
+BANNER SETTINGS
+========================= */
+
+function saveBanner(){
+
+    const brandInput = document.getElementById("brandInput");
+    const titleInput = document.getElementById("titleInput");
+    const descInput = document.getElementById("descInput");
+
+    const bannerBrand = document.getElementById("bannerBrand");
+    const bannerTitle = document.getElementById("bannerTitle");
+    const bannerDescription = document.getElementById("bannerDescription");
+
+    const brand = brandInput.value.trim();
+    const title = titleInput.value.trim();
+    const description = descInput.value.trim();
+
+    if(brand){
+        bannerBrand.textContent = brand;
+        localStorage.setItem("banner-brand", brand);
+    }
+
+    if(title){
+        bannerTitle.textContent = title;
+        localStorage.setItem("banner-title", title);
+    }
+
+    if(description){
+        bannerDescription.textContent = description;
+        localStorage.setItem("banner-description", description);
+    }
+
+    alert("Banner saved successfully.");
+}
+
+
+/* =========================
+LOAD SAVED BANNER
+========================= */
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const savedBrand = localStorage.getItem("banner-brand");
+    const savedTitle = localStorage.getItem("banner-title");
+    const savedDescription = localStorage.getItem("banner-description");
+
+    const bannerBrand = document.getElementById("bannerBrand");
+    const bannerTitle = document.getElementById("bannerTitle");
+    const bannerDescription = document.getElementById("bannerDescription");
+
+    const brandInput = document.getElementById("brandInput");
+    const titleInput = document.getElementById("titleInput");
+    const descInput = document.getElementById("descInput");
+
+    if(savedBrand && bannerBrand){
+        bannerBrand.textContent = savedBrand;
+    }
+
+    if(savedTitle && bannerTitle){
+        bannerTitle.textContent = savedTitle;
+    }
+
+    if(savedDescription && bannerDescription){
+        bannerDescription.textContent = savedDescription;
+    }
+
+    if(brandInput){
+        brandInput.value =
+            savedBrand || bannerBrand?.textContent || "";
+    }
+
+    if(titleInput){
+        titleInput.value =
+            savedTitle || bannerTitle?.textContent || "";
+    }
+
+    if(descInput){
+        descInput.value =
+            savedDescription || bannerDescription?.textContent.trim() || "";
+    }
+
+});
