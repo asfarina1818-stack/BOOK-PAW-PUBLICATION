@@ -826,3 +826,15 @@ function searchAuthor(){
     });
 
 }
+function clearSearch(){
+
+    const input =
+        document.getElementById("authorSearch");
+
+    input.value="";
+
+    searchAuthor();
+
+    input.focus();
+
+}
