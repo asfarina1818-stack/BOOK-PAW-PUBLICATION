@@ -284,9 +284,7 @@ localStorage.setItem("pencapaian",pencapaian);
 
 
 }
-function changeTheme(){
-
-let theme = document.getElementById("themeSelect").value;
+function setTheme(theme){
 
 document.body.className = theme;
 
@@ -306,12 +304,6 @@ let savedTheme = localStorage.getItem("theme");
 if(savedTheme){
 
 document.body.className = savedTheme;
-
-let select = document.getElementById("themeSelect");
-
-if(select){
-select.value = savedTheme;
-}
 
 }
 
