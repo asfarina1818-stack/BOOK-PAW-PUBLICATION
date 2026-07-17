@@ -1,3 +1,11 @@
+:root{
+
+--theme-color:#ff0080;
+
+--theme-second:#7c3aed;
+
+}
+
 *{
     margin:0;
     padding:0;
@@ -12,7 +20,11 @@ body{
 
 /* HEADER */
 .header{
-    background:linear-gradient(135deg,#ff0080,#ff4da6);
+    background:linear-gradient(
+135deg,
+var(--theme-color),
+var(--theme-second)
+);
     color:white;
     text-align:center;
     padding:60px 20px;
