@@ -25,10 +25,10 @@ function changeImage(event){
 
             image.src = e.target.result;
 
-            localStorage.setItem(
-                "profileImage",
-                e.target.result
-            );
+           localStorage.setItem(
+    window.location.pathname + "_image",
+    e.target.result
+);
 
         }
 
@@ -44,7 +44,9 @@ window.onload = function(){
 
     const image = document.getElementById("profileImage");
 
-    const savedImage = localStorage.getItem("profileImage");
+   const savedImage = localStorage.getItem(
+    window.location.pathname + "_image"
+);
 
     if(savedImage && image){
 
