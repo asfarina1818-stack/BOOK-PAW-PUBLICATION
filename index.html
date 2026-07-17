@@ -12,9 +12,9 @@
 
 <body>
 
-<!-- BUTANG THEME -->
+<!-- BUTANG CUSTOMIZE -->
 <button class="theme-btn" onclick="openTheme()">
-Theme
+Customize
 </button>
 
 
@@ -38,7 +38,43 @@ Theme
             </button>
 
         </div>
+<!-- BANNER SETTINGS -->
+<div class="theme-section">
 
+    <h3>Banner Settings</h3>
+
+    <label>Website Name</label>
+    <input
+        type="text"
+        id="brandInput"
+        placeholder="BLINK BOOK">
+
+    <br><br>
+
+    <label>Main Title</label>
+    <input
+        type="text"
+        id="titleInput"
+        placeholder="Author Gallery">
+
+    <br><br>
+
+    <label>Description</label>
+    <textarea
+        id="descInput"
+        rows="3"
+        placeholder="Write your description here..."></textarea>
+
+    <br><br>
+
+    <button
+        type="button"
+        class="primary-action"
+        onclick="saveBanner()">
+        Save Banner
+    </button>
+
+</div>
 
         <!-- PILIH WARNA -->
         <div class="theme-section">
@@ -145,13 +181,13 @@ Theme
 
 
 <!-- HEADER -->
-<header class="header">
+<header class="header" id="mainBanner">
 
-    <h2>BLINK BOOK</h2>
+    <h2 id="bannerBrand">BLINK BOOK</h2>
 
-    <h1>📚 Author Gallery</h1>
+    <h1 id="bannerTitle">Author Gallery</h1>
 
-    <p>
+    <p id="bannerDescription">
         Kenali penulis, karya dan inspirasi di sebalik buku Blink Book
     </p>
 
