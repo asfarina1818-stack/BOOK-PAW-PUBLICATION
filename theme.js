@@ -540,3 +540,67 @@ if (savedBannerImage) {
     }
 
 }
+/* =========================
+AUTHOR POPUP
+========================= */
+
+function openAuthorPopup(name, description, image, link) {
+
+    const popup = document.getElementById("authorPopup");
+    const popupName = document.getElementById("popupAuthorName");
+    const popupDescription = document.getElementById(
+        "popupAuthorDescription"
+    );
+    const popupImage = document.getElementById("popupAuthorImage");
+    const popupLink = document.getElementById("popupAuthorLink");
+
+    if (!popup) return;
+
+    popupName.textContent = name;
+    popupDescription.textContent = description;
+    popupImage.src = image;
+    popupImage.alt = name;
+    popupLink.href = link;
+
+    popup.style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+
+
+function closeAuthorPopup() {
+
+    const popup = document.getElementById("authorPopup");
+
+    if (!popup) return;
+
+    popup.style.display = "none";
+    document.body.style.overflow = "";
+}
+
+
+/* TUTUP BILA KLIK LUAR POPUP */
+
+const authorPopup = document.getElementById("authorPopup");
+
+if (authorPopup) {
+
+    authorPopup.addEventListener("click", function (event) {
+
+        if (event.target === authorPopup) {
+            closeAuthorPopup();
+        }
+
+    });
+
+}
+
+
+/* TUTUP GUNA ESC */
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+        closeAuthorPopup();
+    }
+
+});
