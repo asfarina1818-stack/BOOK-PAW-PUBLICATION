@@ -15,7 +15,41 @@ document.getElementById("popup").style.display="none";
 function changeImage(event){
 
     const image = document.getElementById("profileImage");
+    const file = event.target.files[0];
 
-    image.src = URL.createObjectURL(event.target.files[0]);
+    if(file){
+
+        const reader = new FileReader();
+
+        reader.onload = function(e){
+
+            image.src = e.target.result;
+
+            localStorage.setItem(
+                "profileImage",
+                e.target.result
+            );
+
+        }
+
+        reader.readAsDataURL(file);
+
+    }
+
+}
+
+
+
+window.onload = function(){
+
+    const image = document.getElementById("profileImage");
+
+    const savedImage = localStorage.getItem("profileImage");
+
+    if(savedImage && image){
+
+        image.src = savedImage;
+
+    }
 
 }
