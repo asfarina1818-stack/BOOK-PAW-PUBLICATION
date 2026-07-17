@@ -91,3 +91,64 @@ window.addEventListener("load", function(){
     }
 
 });
+
+function editKarya(){
+
+    const karya = document.getElementById("karya");
+
+    const newKarya = prompt(
+        "Masukkan senarai karya (pisahkan dengan koma):",
+        karya.innerText
+    );
+
+    if(newKarya){
+
+        const senarai = newKarya.split(",");
+
+        karya.innerHTML = "";
+
+        senarai.forEach(function(item){
+
+            let li = document.createElement("li");
+
+            li.innerHTML = item.trim();
+
+            karya.appendChild(li);
+
+        });
+
+
+        localStorage.setItem(
+            "karya",
+            newKarya
+        );
+
+    }
+
+}
+
+
+
+window.addEventListener("load", function(){
+
+    const karya = document.getElementById("karya");
+
+    const savedKarya = localStorage.getItem("karya");
+
+    if(savedKarya && karya){
+
+        karya.innerHTML="";
+
+        savedKarya.split(",").forEach(function(item){
+
+            let li=document.createElement("li");
+
+            li.innerHTML=item.trim();
+
+            karya.appendChild(li);
+
+        });
+
+    }
+
+});
