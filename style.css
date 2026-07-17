@@ -461,3 +461,84 @@ PHONE VIEW
         padding:11px 18px;
     }
 }
+
+/* =========================
+APPEARANCE POPUP DETAILS
+========================= */
+
+.theme-subtitle{
+    margin-top:-14px;
+    margin-bottom:24px;
+    color:#6b7280;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.theme-popup hr{
+    border:none;
+    border-top:1px solid #e5e7eb;
+    margin:24px 0;
+}
+
+.upload-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    min-height:54px;
+    border:1px dashed #cbd5e1;
+    border-radius:14px;
+    background:#f8fafc;
+    color:#1f2937;
+    font-weight:700;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.upload-btn:hover{
+    border-color:var(--theme-color);
+    background:#ffffff;
+    transform:translateY(-2px);
+}
+
+#previewBox{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    min-height:120px;
+    margin-top:14px;
+    padding:14px;
+    border:1px solid #e5e7eb;
+    border-radius:14px;
+    background:#f8fafc;
+    color:#6b7280;
+    font-size:14px;
+    text-align:center;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.apply-btn{
+    width:100%;
+    margin-top:16px;
+    padding:14px 20px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(
+        135deg,
+        var(--theme-color),
+        var(--theme-second)
+    );
+    color:white;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.apply-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(0,0,0,.15);
+}
