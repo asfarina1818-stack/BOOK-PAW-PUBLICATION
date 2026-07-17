@@ -1,49 +1,147 @@
 <!DOCTYPE html>
 <html lang="ms">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Imran Rosli</title>
+
+<title>Imran Rosli | Blink Book</title>
+
 <link rel="stylesheet" href="style.css">
 
 <script src="script.js"></script>
-  
+
 </head>
+
 
 <body>
 
+
 <header class="header">
+
 <h2>BLINK BOOK</h2>
+
 <h1>Imran Rosli</h1>
+
 <p>Profil Penulis</p>
+
 </header>
 
+
+
 <section class="container">
+
 <div class="profile">
 
-<img id="profileImage" src="images/ilyas-saaid.jpg.png">
+
+<img id="profileImage" src="images/imran-rosli.jpg.jpg">
+
 
 <br>
 
+
 <label class="edit-btn">
+
 ✏️ Edit Gambar
+
 <input type="file" accept="image/*" onchange="changeImage(event)">
+
 </label>
+
+
 
 <h2>Imran Rosli</h2>
 
-<p>
-Imran Rosli merupakan penulis Blink Book yang menghasilkan karya motivasi, inspirasi dan kerohanian untuk pembaca pelbagai peringkat umur.
+
+
+<p id="biodata">
+
+Imran Rosli merupakan penulis yang aktif menghasilkan karya berkaitan pendidikan, motivasi dan inspirasi untuk pembaca.
+
 </p>
 
-<a class="btn" href="index.html">← Kembali</a>
+
+
+<h3>🎓 Pendidikan</h3>
+
+
+<p id="pendidikan">
+
+Lulusan Ijazah Sarjana Muda Akidah dan Pengajian Agama, Universiti Sains Islam Malaysia (USIM).
+
+</p>
+
+
+
+<h3>💼 Kerjaya</h3>
+
+
+<p id="kerjaya">
+
+Penulis, penceramah motivasi serta penggiat dalam bidang pendidikan dan pembangunan diri.
+
+</p>
+
+
+
+<h3>📚 Karya</h3>
+
+
+<ul id="karya">
+
+<li>Fakta Wah Nabi-Nabi</li>
+<li>Karya inspirasi Blink Book</li>
+<li>Buku pendidikan dan motivasi</li>
+
+</ul>
+
+
+
+<h3>🏆 Pencapaian</h3>
+
+
+<ul id="pencapaian">
+
+<li>Aktif dalam penulisan kreatif</li>
+<li>Terlibat dalam aktiviti motivasi dan pendidikan</li>
+
+</ul>
+
+
+
+<br>
+
+
+<button class="edit-bio" onclick="editProfil()">
+
+✏️ Edit Profil
+
+</button>
+
+
+
+<a class="btn" href="index.html">
+
+← Kembali
+
+</a>
+
 
 </div>
+
 </section>
 
+
+
 <footer>
+
 <p>© Blink Book</p>
+
 </footer>
 
+
+
 </body>
+
 </html>
