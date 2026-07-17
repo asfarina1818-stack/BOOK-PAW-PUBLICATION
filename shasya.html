@@ -1,49 +1,147 @@
 <!DOCTYPE html>
 <html lang="ms">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shasya Ali</title>
+
+<title>Shasya Ali | Blink Book</title>
+
 <link rel="stylesheet" href="style.css">
 
 <script src="script.js"></script>
-  
+
 </head>
+
 
 <body>
 
+
 <header class="header">
+
 <h2>BLINK BOOK</h2>
+
 <h1>Shasya Ali</h1>
+
 <p>Profil Penulis</p>
+
 </header>
 
+
+
 <section class="container">
+
 <div class="profile">
 
-<img id="profileImage" src="images/ilyas-saaid.jpg.png">
+
+<img id="profileImage" src="images/shasya-ali.jpg.png">
+
 
 <br>
 
+
 <label class="edit-btn">
+
 ✏️ Edit Gambar
+
 <input type="file" accept="image/*" onchange="changeImage(event)">
+
 </label>
+
+
 
 <h2>Shasya Ali</h2>
 
-<p>
-Shasya Ali merupakan penulis Blink Book yang terkenal dengan karya remaja dan Siri Fail Juvana.
+
+
+<p id="biodata">
+
+Shasya Ali merupakan penulis yang aktif menghasilkan karya kreatif dan terlibat dalam penerbitan buku Blink Book.
+
 </p>
 
-<a class="btn" href="index.html">← Kembali</a>
+
+
+<h3>🎓 Pendidikan</h3>
+
+
+<p id="pendidikan">
+
+Maklumat pendidikan Shasya Ali akan dikemaskini.
+
+</p>
+
+
+
+<h3>💼 Kerjaya</h3>
+
+
+<p id="kerjaya">
+
+Penulis karya remaja dan penggiat dalam bidang penulisan kreatif.
+
+</p>
+
+
+
+<h3>📚 Karya</h3>
+
+
+<ul id="karya">
+
+<li>Siri Fail Juvana</li>
+<li>Karya remaja Blink Book</li>
+<li>Penulisan kreatif</li>
+
+</ul>
+
+
+
+<h3>🏆 Pencapaian</h3>
+
+
+<ul id="pencapaian">
+
+<li>Penulis aktif Blink Book</li>
+<li>Menghasilkan karya untuk pembaca remaja</li>
+
+</ul>
+
+
+
+<br>
+
+
+<button class="edit-bio" onclick="editProfil()">
+
+✏️ Edit Profil
+
+</button>
+
+
+
+<a class="btn" href="index.html">
+
+← Kembali
+
+</a>
+
 
 </div>
+
 </section>
 
+
+
 <footer>
+
 <p>© Blink Book</p>
+
 </footer>
 
+
+
 </body>
+
 </html>
