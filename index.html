@@ -96,7 +96,54 @@
 <p>© Blink Book Author Gallery</p>
 
 </footer>
+<div class="theme-overlay" id="themeBox">
 
+<div class="theme-popup">
+
+<h2>🎨 Pilih Tema</h2>
+
+<div class="color-list">
+
+<button onclick="changeTheme('#ff0080')">
+🌸 Pink
+</button>
+
+<button onclick="changeTheme('#7c3aed')">
+💜 Purple
+</button>
+
+<button onclick="changeTheme('#2563eb')">
+💙 Blue
+</button>
+
+<button onclick="changeTheme('#10b981')">
+💚 Green
+</button>
+
+<button onclick="changeTheme('#f59e0b')">
+🧡 Orange
+</button>
+
+</div>
+
+<h3>Custom Color</h3>
+
+<input 
+type="color" 
+onchange="changeTheme(this.value)">
+
+
+<br><br>
+
+<button onclick="closeTheme()">
+Tutup
+</button>
+
+
+</div>
+
+</div>
+  
 <script src="theme.js"></script>
   
 </body>
