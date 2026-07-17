@@ -1512,3 +1512,73 @@ AUTHOR POPUP
     color:var(--theme-color);
 
 }
+/* ==========================
+   MOBILE RESPONSIVE
+========================== */
+
+@media (max-width:768px){
+
+    .header{
+        width:95%;
+        padding:45px 20px;
+    }
+
+    .header h1{
+        font-size:30px;
+    }
+
+    .header h2{
+        font-size:18px;
+        letter-spacing:3px;
+    }
+
+    .header p{
+        font-size:15px;
+    }
+
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+    }
+
+    nav a{
+        margin:0;
+        padding:10px 18px;
+        font-size:14px;
+    }
+
+    .container{
+        width:95%;
+    }
+
+    .author-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .card{
+        max-width:380px;
+        margin:auto;
+    }
+
+    .search-box{
+        max-width:100%;
+    }
+
+    .search-box input{
+        font-size:16px;
+    }
+
+    .author-popup{
+        width:92%;
+        padding:25px;
+    }
+
+    .author-popup img{
+        width:150px;
+        height:150px;
+    }
+
+}
