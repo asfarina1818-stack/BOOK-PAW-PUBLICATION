@@ -179,3 +179,108 @@ function editPencapaian(){
     }
 
 }
+
+function editProfil(){
+
+let biodata = prompt(
+"Edit Biodata:",
+document.getElementById("biodata").innerHTML
+);
+
+
+let pendidikan = prompt(
+"Edit Pendidikan:",
+document.getElementById("pendidikan").innerHTML
+);
+
+
+let kerjaya = prompt(
+"Edit Kerjaya:",
+document.getElementById("kerjaya").innerHTML
+);
+
+
+let karya = prompt(
+"Edit Karya (pisahkan dengan koma):",
+document.getElementById("karya").innerText
+);
+
+
+let pencapaian = prompt(
+"Edit Pencapaian (pisahkan dengan koma):",
+document.getElementById("pencapaian").innerText
+);
+
+
+
+if(biodata){
+
+document.getElementById("biodata").innerHTML=biodata;
+
+localStorage.setItem("biodata",biodata);
+
+}
+
+
+if(pendidikan){
+
+document.getElementById("pendidikan").innerHTML=pendidikan;
+
+localStorage.setItem("pendidikan",pendidikan);
+
+}
+
+
+if(kerjaya){
+
+document.getElementById("kerjaya").innerHTML=kerjaya;
+
+localStorage.setItem("kerjaya",kerjaya);
+
+}
+
+
+if(karya){
+
+let ul=document.getElementById("karya");
+
+ul.innerHTML="";
+
+karya.split(",").forEach(function(item){
+
+let li=document.createElement("li");
+
+li.innerHTML=item.trim();
+
+ul.appendChild(li);
+
+});
+
+localStorage.setItem("karya",karya);
+
+}
+
+
+
+if(pencapaian){
+
+let ul=document.getElementById("pencapaian");
+
+ul.innerHTML="";
+
+pencapaian.split(",").forEach(function(item){
+
+let li=document.createElement("li");
+
+li.innerHTML=item.trim();
+
+ul.appendChild(li);
+
+});
+
+localStorage.setItem("pencapaian",pencapaian);
+
+}
+
+
+}
