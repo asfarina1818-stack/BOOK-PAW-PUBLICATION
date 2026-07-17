@@ -11,16 +11,58 @@
 
 </head>
 
-<body>
-  <div class="theme-box">
+<button class="theme-btn" onclick="openTheme()">
+🎨 Theme
+</button>
 
-<button onclick="setTheme('pink')" class="theme pink-btn">🩷</button>
 
-<button onclick="setTheme('purple')" class="theme purple-btn">💜</button>
+<div class="theme-overlay" id="themeBox">
 
-<button onclick="setTheme('blue')" class="theme blue-btn">💙</button>
+<div class="theme-popup">
 
-<button onclick="setTheme('dark')" class="theme dark-btn">🌙</button>
+<h2>🎨 Choose Theme</h2>
+
+<div class="color-list">
+
+<button onclick="changeTheme('#ff0080')">
+Pink
+</button>
+
+<button onclick="changeTheme('#7c3aed')">
+Purple
+</button>
+
+<button onclick="changeTheme('#2563eb')">
+Blue
+</button>
+
+<button onclick="changeTheme('#10b981')">
+Green
+</button>
+
+<button onclick="changeTheme('#f59e0b')">
+Orange
+</button>
+
+</div>
+
+
+<h3>Custom Color</h3>
+
+<input 
+type="color"
+onchange="changeTheme(this.value)"
+>
+
+
+<br><br>
+
+<button class="close-theme" onclick="closeTheme()">
+Close
+</button>
+
+
+</div>
 
 </div>
 
