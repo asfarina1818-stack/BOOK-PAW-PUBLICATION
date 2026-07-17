@@ -20,32 +20,70 @@
 
 <div class="theme-popup">
 
-<h2>🎨 Choose Theme</h2>
+<div class="theme-popup">
+
+<h2>Appearance</h2>
+
+<p class="theme-subtitle">
+Customize the look and feel of your website
+</p>
+
+<hr>
+
+<h3>Theme Color</h3>
 
 <div class="color-list">
 
-<button onclick="changeTheme('#ff0080')">
-Pink
-</button>
+<button onclick="changeTheme('#ff0080')">Pink</button>
 
-<button onclick="changeTheme('#7c3aed')">
-Purple
-</button>
+<button onclick="changeTheme('#7c3aed')">Purple</button>
 
-<button onclick="changeTheme('#2563eb')">
-Blue
-</button>
+<button onclick="changeTheme('#2563eb')">Blue</button>
 
-<button onclick="changeTheme('#10b981')">
-Green
-</button>
+<button onclick="changeTheme('#10b981')">Green</button>
 
-<button onclick="changeTheme('#f59e0b')">
-Orange
-</button>
+<button onclick="changeTheme('#f59e0b')">Orange</button>
 
 </div>
 
+<hr>
+
+<h3>Background Image</h3>
+
+<label class="upload-btn">
+
+Choose Image
+
+<input
+type="file"
+accept="image/*"
+id="bgUpload"
+onchange="previewBackground(event)"
+hidden>
+
+</label>
+
+<div id="previewBox">
+
+No image selected
+
+</div>
+
+<button class="apply-btn"
+onclick="applyBackground()">
+
+Apply Background
+
+</button>
+
+<button class="close-theme"
+onclick="closeTheme()">
+
+Close
+
+</button>
+
+</div>
 
 <h3>Custom Color</h3>
 
