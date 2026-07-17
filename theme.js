@@ -792,3 +792,37 @@ document.addEventListener(
 
     }
 );
+/* SEARCH AUTHOR */
+
+function searchAuthor(){
+
+    const searchInput =
+        document.getElementById("authorSearch");
+
+    if(!searchInput) return;
+
+    const searchText =
+        searchInput.value.toLowerCase().trim();
+
+    const authorCards =
+        document.querySelectorAll(".author-grid .card");
+
+    authorCards.forEach(function(card){
+
+        const authorName =
+            card.querySelector("h3");
+
+        if(!authorName) return;
+
+        const name =
+            authorName.textContent.toLowerCase();
+
+        if(name.includes(searchText)){
+            card.style.display = "";
+        }else{
+            card.style.display = "none";
+        }
+
+    });
+
+}
