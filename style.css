@@ -617,3 +617,63 @@ footer{
     .card img{ height:270px; }
     .author-popup{ padding:30px 22px 24px; }
 }
+/* ==================================
+   HALAMAN PROFIL PENULIS
+================================== */
+
+.profile-page{
+    width:calc(100% - 48px);
+    max-width:1000px;
+    margin:60px auto;
+    padding:0;
+}
+
+/* Kotak utama profil */
+.profile-page .profile{
+    width:100%;
+    max-width:none;
+    margin:0;
+    padding:45px;
+
+    background:rgba(255,255,255,.94);
+    color:#1f2937;
+
+    border:1px solid rgba(255,255,255,.65);
+    border-radius:28px;
+
+    box-shadow:0 25px 65px rgba(15,23,42,.28);
+}
+
+/* Semua tulisan jelas */
+.profile-page .profile p{
+    color:#374151;
+}
+
+.profile-page .profile h2,
+.profile-page .profile h3{
+    color:var(--theme-color);
+}
+
+.profile-page .profile li{
+    color:#374151;
+    background:#f8fafc;
+}
+
+/* Gambar profil */
+.profile-page .profile img{
+    border-color:var(--theme-color);
+}
+
+/* Telefon */
+@media(max-width:700px){
+
+    .profile-page{
+        width:calc(100% - 24px);
+        margin:35px auto;
+    }
+
+    .profile-page .profile{
+        padding:28px 20px;
+    }
+
+}
