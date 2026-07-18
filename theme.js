@@ -368,156 +368,6 @@ function closeAuthorPopup(){
     document.body.style.overflow =
         "";
 
-}/* =========================
-AUTHOR POPUP
-========================= */
-
-function openAuthorPopup(
-    name,
-    description,
-    image,
-    link
-){
-
-    const popup =
-        document.getElementById("authorPopup");
-
-    const popupName =
-        document.getElementById("popupAuthorName");
-
-    const popupDescription =
-        document.getElementById("popupAuthorDescription");
-
-    const popupImage =
-        document.getElementById("popupAuthorImage");
-
-    const popupLink =
-        document.getElementById("popupAuthorLink");
-
-    if(
-        !popup ||
-        !popupName ||
-        !popupDescription ||
-        !popupImage ||
-        !popupLink
-    ){
-
-        alert(
-            "Author popup belum lengkap dalam index.html."
-        );
-
-        return;
-
-    }
-
-    popupName.textContent = name;
-
-    popupDescription.textContent =
-        description;
-
-    popupImage.src = image;
-    popupImage.alt = name;
-
-    popupLink.href = link;
-
-    popup.style.display = "flex";
-
-    document.body.style.overflow =
-        "hidden";
-
-}
-
-
-function closeAuthorPopup(){
-
-    const popup =
-        document.getElementById("authorPopup");
-
-    if(popup){
-
-        popup.style.display =
-            "none";
-
-    }
-
-    document.body.style.overflow =
-        "";
-
-}/* =========================
-AUTHOR POPUP
-========================= */
-
-function openAuthorPopup(
-    name,
-    description,
-    image,
-    link
-){
-
-    const popup =
-        document.getElementById("authorPopup");
-
-    const popupName =
-        document.getElementById("popupAuthorName");
-
-    const popupDescription =
-        document.getElementById("popupAuthorDescription");
-
-    const popupImage =
-        document.getElementById("popupAuthorImage");
-
-    const popupLink =
-        document.getElementById("popupAuthorLink");
-
-    if(
-        !popup ||
-        !popupName ||
-        !popupDescription ||
-        !popupImage ||
-        !popupLink
-    ){
-
-        alert(
-            "Author popup belum lengkap dalam index.html."
-        );
-
-        return;
-
-    }
-
-    popupName.textContent = name;
-
-    popupDescription.textContent =
-        description;
-
-    popupImage.src = image;
-    popupImage.alt = name;
-
-    popupLink.href = link;
-
-    popup.style.display = "flex";
-
-    document.body.style.overflow =
-        "hidden";
-
-}
-
-
-function closeAuthorPopup(){
-
-    const popup =
-        document.getElementById("authorPopup");
-
-    if(popup){
-
-        popup.style.display =
-            "none";
-
-    }
-
-    document.body.style.overflow =
-        "";
-
 }
 /* =========================
 LOAD SAVED SETTINGS
@@ -527,15 +377,14 @@ document.addEventListener(
     "DOMContentLoaded",
     function(){
 
-        const savedTheme =
-            localStorage.getItem(
-                "theme-color"
-            );
+       const savedTheme =
+    localStorage.getItem("theme-color");
 
-        const savedBackground =
-            localStorage.getItem(
-                "website-background"
-            );
+const savedSecondTheme =
+    localStorage.getItem("theme-second");
+
+const savedBackground =
+    localStorage.getItem("website-background");
 
         if(savedTheme){
 
@@ -545,6 +394,15 @@ document.addEventListener(
             );
 
         }
+
+        if(savedSecondTheme){
+
+    document.documentElement.style.setProperty(
+        "--theme-second",
+        savedSecondTheme
+    );
+
+}
 
         if(savedBackground){
 
