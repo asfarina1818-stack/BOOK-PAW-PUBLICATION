@@ -1932,6 +1932,46 @@ body{
 }
 
 .header nav a:hover{
+    /* BETULKAN WARNA TULISAN */
+
+body{
+    color:#1f2937;
+}
+
+.container,
+.container p,
+.container h2,
+.container h3{
+    color:#1f2937;
+}
+
+/* Kad penulis kekal tema gelap */
+
+.card{
+    color:#ffffff;
+}
+
+.card h3{
+    color:#ffffff;
+}
+
+.card p{
+    color:#cbd5e1;
+}
+
+/* Popup kekal jelas */
+
+.author-popup{
+    color:#1f2937;
+}
+
+.author-popup h2{
+    color:#111827;
+}
+
+.author-popup p{
+    color:#475569;
+}
     transform:translateY(-2px);
 
     background:rgba(99,102,241,.90);
