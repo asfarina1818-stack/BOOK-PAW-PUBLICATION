@@ -2162,3 +2162,196 @@ body{
     background:var(--theme-color);
     transform:rotate(90deg);
 }
+/* ==================================
+   FIX LAYOUT HOME PAGE
+================================== */
+
+/* Bahagian authors lebih jelas */
+.container{
+    width:calc(100% - 48px);
+    max-width:1200px;
+    margin:70px auto;
+    padding:45px 30px;
+
+    background:rgba(255,255,255,.86);
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.55);
+    border-radius:28px;
+
+    box-shadow:0 20px 55px rgba(15,23,42,.12);
+}
+
+/* Tajuk tidak hilang atas background cerah */
+.container > h2{
+    color:#172033 !important;
+    text-align:center;
+    font-size:38px;
+    font-weight:800;
+    margin:0 0 20px;
+}
+
+/* Search bar */
+.search-box{
+    position:relative;
+
+    display:flex;
+    align-items:center;
+
+    width:100%;
+    max-width:600px;
+
+    margin:35px auto 45px;
+}
+
+.search-box input{
+    display:block;
+
+    width:100%;
+    height:62px;
+
+    padding:0 58px;
+
+    border:2px solid #dce1e8;
+    border-radius:999px;
+
+    background:#ffffff;
+    color:#1f2937;
+
+    font-size:17px;
+    outline:none;
+
+    box-shadow:0 10px 28px rgba(15,23,42,.10);
+}
+
+.search-box input:focus{
+    border-color:var(--theme-color);
+
+    box-shadow:
+        0 12px 30px rgba(15,23,42,.12),
+        0 0 0 4px rgba(99,102,241,.12);
+}
+
+.search-icon{
+    position:absolute;
+    left:21px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    z-index:3;
+    font-size:19px;
+    line-height:1;
+
+    pointer-events:none;
+}
+
+.clear-search{
+    position:absolute;
+    right:13px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    z-index:3;
+
+    width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:0;
+    margin:0;
+
+    border:none;
+    border-radius:50%;
+
+    background:#eef1f5;
+    color:#64748b;
+
+    font-size:16px;
+    cursor:pointer;
+}
+
+.clear-search:hover{
+    background:var(--theme-color);
+    color:#ffffff;
+}
+
+/* Susunan kad */
+.author-grid{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:28px;
+    align-items:stretch;
+}
+
+.card{
+    width:100%;
+    max-width:none;
+    margin:0;
+
+    padding:22px;
+
+    background:#172033;
+    border:1px solid rgba(148,163,184,.22);
+    border-radius:24px;
+
+    text-align:center;
+    box-shadow:0 18px 40px rgba(15,23,42,.20);
+}
+
+.card img{
+    width:100%;
+    height:280px;
+
+    display:block;
+    object-fit:cover;
+
+    margin:0 0 20px;
+
+    border:4px solid #16b9ee;
+    border-radius:18px;
+}
+
+.card h3{
+    color:#ffffff !important;
+}
+
+.card p{
+    color:#cbd5e1 !important;
+}
+
+/* Tablet */
+@media (max-width:900px){
+
+    .author-grid{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+/* Telefon */
+@media (max-width:600px){
+
+    .container{
+        width:calc(100% - 24px);
+        padding:30px 16px;
+        margin:40px auto;
+    }
+
+    .container > h2{
+        font-size:30px;
+    }
+
+    .author-grid{
+        grid-template-columns:1fr;
+    }
+
+    .card img{
+        height:300px;
+    }
+
+=
