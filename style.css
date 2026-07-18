@@ -1932,51 +1932,17 @@ body{
 }
 
 .header nav a:hover{
-    /* BETULKAN WARNA TULISAN */
-
-body{
-    color:#1f2937;
-}
-
-.container,
-.container p,
-.container h2,
-.container h3{
-    color:#1f2937;
-}
-
-/* Kad penulis kekal tema gelap */
-
-.card{
-    color:#ffffff;
-}
-
-.card h3{
-    color:#ffffff;
-}
-
-.card p{
-    color:#cbd5e1;
-}
-
-/* Popup kekal jelas */
-
-.author-popup{
-    color:#1f2937;
-}
-
-.author-popup h2{
-    color:#111827;
-}
-
-.author-popup p{
-    color:#475569;
-}
     transform:translateY(-2px);
 
-    background:rgba(99,102,241,.90);
+    background:linear-gradient(
+        135deg,
+        var(--theme-color),
+        var(--theme-second)
+    );
+
     border-color:rgba(255,255,255,.30);
 }
+
 /* WARNA TEKS UNTUK DARK PREMIUM DESIGN */
 
 body{
@@ -1995,6 +1961,28 @@ body{
     color:#ffffff;
 }
 
+.card h3{
+    color:#ffffff;
+}
+
+.card p{
+    color:#cbd5e1;
+}
+
+/* POPUP CERAH DAN MUDAH DIBACA */
+
+.author-popup{
+    background:#ffffff;
+    color:#1f2937;
+}
+
+.author-popup h2{
+    color:#111827;
+}
+
+.author-popup p{
+    color:#475569;
+}
 .card h3{
     color:#ffffff;
 }
