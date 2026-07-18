@@ -1993,10 +1993,6 @@ body{
 
 /* Popup kekal cerah supaya mudah dibaca */
 
-.author-popup{
-    background:#ffffff;
-    color:#1f2937;
-}
 
 .author-popup h2{
     color:#111827;
@@ -2004,4 +2000,165 @@ body{
 
 .author-popup p{
     color:#475569;
+}
+/* =========================
+   PREMIUM AUTHOR POPUP
+========================= */
+
+.author-popup-overlay{
+    position:fixed;
+    inset:0;
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:rgba(2,6,23,.78);
+    backdrop-filter:blur(10px);
+
+    z-index:9999;
+}
+
+.author-popup{
+    position:relative;
+
+    width:100%;
+    max-width:430px;
+
+    padding:34px;
+
+    border:1px solid rgba(148,163,184,.18);
+    border-radius:26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15,23,42,.98),
+            rgba(30,27,75,.96)
+        );
+
+    color:#f8fafc;
+    text-align:center;
+
+    box-shadow:
+        0 30px 80px rgba(2,6,23,.65);
+
+    animation:popupOpen .28s ease;
+}
+
+@keyframes popupOpen{
+
+    from{
+        opacity:0;
+        transform:translateY(18px) scale(.96);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+}
+
+.author-popup img{
+    width:150px;
+    height:150px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid rgba(255,255,255,.10);
+
+    box-shadow:
+        0 14px 35px rgba(2,6,23,.45);
+
+    margin-bottom:18px;
+}
+
+.author-popup h2{
+    margin:0 0 10px;
+
+    color:#ffffff;
+
+    font-size:27px;
+    font-weight:800;
+}
+
+.author-popup p{
+    margin:0 0 24px;
+
+    color:#cbd5e1;
+
+    font-size:15px;
+    line-height:1.7;
+}
+
+#popupAuthorLink{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    width:100%;
+
+    padding:13px 20px;
+
+    border-radius:14px;
+
+    background:linear-gradient(
+        135deg,
+        var(--theme-color),
+        var(--theme-second)
+    );
+
+    color:#ffffff;
+    font-weight:700;
+    text-decoration:none;
+
+    box-shadow:
+        0 12px 28px rgba(79,70,229,.30);
+
+    transition:.25s ease;
+}
+
+#popupAuthorLink:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 16px 34px rgba(79,70,229,.40);
+}
+
+.author-popup-close{
+    position:absolute;
+    top:14px;
+    right:14px;
+
+    width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:0;
+
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:12px;
+
+    background:rgba(15,23,42,.75);
+    color:#ffffff;
+
+    font-size:22px;
+    line-height:1;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+}
+
+.author-popup-close:hover{
+    background:var(--theme-color);
+    transform:rotate(90deg);
 }
