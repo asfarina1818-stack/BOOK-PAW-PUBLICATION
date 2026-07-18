@@ -32,9 +32,32 @@ THEME COLOR
 
 function changeTheme(color){
 
+    let secondColor = "#7c3aed";
+
+    if(color === "#ff1694"){
+        secondColor = "#7c3aed";
+    }
+
+    if(color === "#7c3aed"){
+        secondColor = "#4f46e5";
+    }
+
+    if(color === "#2563eb"){
+        secondColor = "#06b6d4";
+    }
+
+    if(color === "#111827"){
+        secondColor = "#334155";
+    }
+
     document.documentElement.style.setProperty(
         "--theme-color",
         color
+    );
+
+    document.documentElement.style.setProperty(
+        "--theme-second",
+        secondColor
     );
 
     localStorage.setItem(
@@ -42,8 +65,12 @@ function changeTheme(color){
         color
     );
 
-}
+    localStorage.setItem(
+        "theme-second",
+        secondColor
+    );
 
+}
 /* =========================
 WEBSITE BACKGROUND
 ========================= */
