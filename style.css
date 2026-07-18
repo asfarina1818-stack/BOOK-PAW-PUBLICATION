@@ -1977,3 +1977,43 @@ body{
     background:rgba(99,102,241,.90);
     border-color:rgba(255,255,255,.30);
 }
+/* WARNA TEKS UNTUK DARK PREMIUM DESIGN */
+
+body{
+    color:#f8fafc;
+}
+
+.container{
+    color:#f8fafc;
+}
+
+.container > h2{
+    color:#ffffff;
+}
+
+.card{
+    color:#ffffff;
+}
+
+.card h3{
+    color:#ffffff;
+}
+
+.card p{
+    color:#cbd5e1;
+}
+
+/* Popup kekal cerah supaya mudah dibaca */
+
+.author-popup{
+    background:#ffffff;
+    color:#1f2937;
+}
+
+.author-popup h2{
+    color:#111827;
+}
+
+.author-popup p{
+    color:#475569;
+}
