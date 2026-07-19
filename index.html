@@ -431,85 +431,124 @@ Customize
 </footer>
 
 
+<script src="theme.js"></script>
+
 <script>
-const AUTHOR_API =
+const API_URL =
 "https://script.google.com/macros/s/AKfycbwXG94LnH_8srGevCU8A42thnM_oRN8QCMwi_e7RZXI9Lt9ZmchPI64t3RzLDdoUIqS/exec";
 
-async function loadAuthorsFromGoogleSheets() {
-    try {
-        const response = await fetch(AUTHOR_API);
+fetch(API_URL + "?time=" + Date.now())
+    .then(response => response.json())
+    .then(data => {
+        const syak = data.find(author =>
+            String(author.id).trim().toUpperCase() === "SYAK"
+        );
 
-        if (!response.ok) {
-            throw new Error("Tidak dapat membaca data Google Sheets.");
+        if (!syak) {
+            alert("Data SYAK tidak dijumpai dalam Google Sheets.");
+            return;
         }
 
-        const authors = await response.json();
         const cards = document.querySelectorAll(".author-grid .card");
 
-        authors.forEach(author => {
-            const authorName = String(author.NAMA || "").trim().toLowerCase();
+        cards.forEach(card => {
+            const name = card.querySelector("h3");
 
-            cards.forEach(card => {
-                const cardNameElement = card.querySelector("h3");
+            if (
+                name &&
+                name.textContent.trim().toLowerCase() === "syak mazlan"
+            ) {
+                const role = card.querySelector("p");
+                const image = card.querySelector("img");
+                const button = card.querySelector(".more-btn");
 
-                if (!cardNameElement) return;
+                name.textContent = String(syak.NAMA || "Syak Mazlan").trim();
 
-                const cardName = cardNameElement.textContent.trim().toLowerCase();
+                role.textContent =
+                    String(syak.PERANAN || "Penulis Blink Book").trim();
 
-                if (cardName === authorName) {
-                    updateAuthorCard(card, author);
+                const imagePath = String(syak.GAMBAR || "").trim();
+
+                if (imagePath) {
+                    image.src = imagePath;
                 }
-            });
+
+                button.onclick = function () {
+                    openAuthorPopup(
+                        String(syak.NAMA || "").trim(),
+                        String(syak.BIODATA || "").trim(),
+                        imagePath,
+                        "syak.html"
+                    );
+                };
+            }
         });
-
-    } catch (error) {
-        console.error("Ralat Google Sheets:", error);
-    }
-}
-
-function updateAuthorCard(card, author) {
-    const image = card.querySelector("img");
-    const name = card.querySelector("h3");
-    const role = card.querySelector("p");
-    const button = card.querySelector(".more-btn");
-
-    const authorId = String(author.id || "").trim().toLowerCase();
-    const authorName = String(author.NAMA || "").trim();
-    const authorRole = String(author.PERANAN || "").trim();
-    const authorImage = String(author.GAMBAR || "").trim();
-    const authorBio = String(author.BIODATA || "").trim();
-
-    if (image && authorImage) {
-        image.src = authorImage;
-        image.alt = authorName;
-    }
-
-    if (name && authorName) {
-        name.textContent = authorName;
-    }
-
-    if (role && authorRole) {
-        role.textContent = authorRole;
-    }
-
-    if (button) {
-        const profilePage = authorId + ".html";
-
-        button.onclick = function () {
-            openAuthorPopup(
-                authorName,
-                authorBio,
-                authorImage,
-                profilePage
-            );
-        };
-    }
-}
-
-document.addEventListener("DOMContentLoaded", loadAuthorsFromGoogleSheets);
+    })
+    .catch(error => {
+        alert("Google Sheets gagal disambungkan.");
+        console.error(error);
+    });
 </script>
 
-<script src="theme.js"></script>
+</body>
+</html><script src="theme.js"></script>
+
+<script>
+const API_URL =
+"https://script.google.com/macros/s/AKfycbwXG94LnH_8srGevCU8A42thnM_oRN8QCMwi_e7RZXI9Lt9ZmchPI64t3RzLDdoUIqS/exec";
+
+fetch(API_URL + "?time=" + Date.now())
+    .then(response => response.json())
+    .then(data => {
+        const syak = data.find(author =>
+            String(author.id).trim().toUpperCase() === "SYAK"
+        );
+
+        if (!syak) {
+            alert("Data SYAK tidak dijumpai dalam Google Sheets.");
+            return;
+        }
+
+        const cards = document.querySelectorAll(".author-grid .card");
+
+        cards.forEach(card => {
+            const name = card.querySelector("h3");
+
+            if (
+                name &&
+                name.textContent.trim().toLowerCase() === "syak mazlan"
+            ) {
+                const role = card.querySelector("p");
+                const image = card.querySelector("img");
+                const button = card.querySelector(".more-btn");
+
+                name.textContent = String(syak.NAMA || "Syak Mazlan").trim();
+
+                role.textContent =
+                    String(syak.PERANAN || "Penulis Blink Book").trim();
+
+                const imagePath = String(syak.GAMBAR || "").trim();
+
+                if (imagePath) {
+                    image.src = imagePath;
+                }
+
+                button.onclick = function () {
+                    openAuthorPopup(
+                        String(syak.NAMA || "").trim(),
+                        String(syak.BIODATA || "").trim(),
+                        imagePath,
+                        "syak.html"
+                    );
+                };
+            }
+        });
+    })
+    .catch(error => {
+        alert("Google Sheets gagal disambungkan.");
+        console.error(error);
+    });
+</script>
 
 </body>
 </html>
