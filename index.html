@@ -431,6 +431,84 @@ Customize
 </footer>
 
 
+<script>
+const AUTHOR_API =
+"https://script.google.com/macros/s/AKfycbwXG94LnH_8srGevCU8A42thnM_oRN8QCMwi_e7RZXI9Lt9ZmchPI64t3RzLDdoUIqS/exec";
+
+async function loadAuthorsFromGoogleSheets() {
+    try {
+        const response = await fetch(AUTHOR_API);
+
+        if (!response.ok) {
+            throw new Error("Tidak dapat membaca data Google Sheets.");
+        }
+
+        const authors = await response.json();
+        const cards = document.querySelectorAll(".author-grid .card");
+
+        authors.forEach(author => {
+            const authorName = String(author.NAMA || "").trim().toLowerCase();
+
+            cards.forEach(card => {
+                const cardNameElement = card.querySelector("h3");
+
+                if (!cardNameElement) return;
+
+                const cardName = cardNameElement.textContent.trim().toLowerCase();
+
+                if (cardName === authorName) {
+                    updateAuthorCard(card, author);
+                }
+            });
+        });
+
+    } catch (error) {
+        console.error("Ralat Google Sheets:", error);
+    }
+}
+
+function updateAuthorCard(card, author) {
+    const image = card.querySelector("img");
+    const name = card.querySelector("h3");
+    const role = card.querySelector("p");
+    const button = card.querySelector(".more-btn");
+
+    const authorId = String(author.id || "").trim().toLowerCase();
+    const authorName = String(author.NAMA || "").trim();
+    const authorRole = String(author.PERANAN || "").trim();
+    const authorImage = String(author.GAMBAR || "").trim();
+    const authorBio = String(author.BIODATA || "").trim();
+
+    if (image && authorImage) {
+        image.src = authorImage;
+        image.alt = authorName;
+    }
+
+    if (name && authorName) {
+        name.textContent = authorName;
+    }
+
+    if (role && authorRole) {
+        role.textContent = authorRole;
+    }
+
+    if (button) {
+        const profilePage = authorId + ".html";
+
+        button.onclick = function () {
+            openAuthorPopup(
+                authorName,
+                authorBio,
+                authorImage,
+                profilePage
+            );
+        };
+    }
+}
+
+document.addEventListener("DOMContentLoaded", loadAuthorsFromGoogleSheets);
+</script>
+
 <script src="theme.js"></script>
 
 </body>
