@@ -677,3 +677,16 @@ footer{
     }
 
 }
+.theme-btn{
+    position:fixed;
+    top:24px;
+    right:24px;
+    z-index:10000;
+}
+
+.admin-btn{
+    position:fixed;
+    top:24px;
+    right:160px;
+    z-index:9999;
+}
