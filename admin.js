@@ -5,16 +5,36 @@ const loginBox = document.querySelector(".login-box");
 const adminPanel = document.getElementById("adminPanel");
 const loginBtn = document.getElementById("loginBtn");
 const saveBtn = document.getElementById("saveBtn");
+const authorSelect = document.getElementById("authorSelect");
 
 let currentAuthorId = "SYAK";
 
-/* BUKA PANEL EDITOR */
+/* BUKA PANEL ADMIN */
 loginBtn.addEventListener("click", function () {
     loginBox.style.display = "none";
     adminPanel.style.display = "block";
 
+    currentAuthorId = authorSelect.value;
     loadAuthor();
 });
+
+/* BILA PILIH PENULIS LAIN */
+authorSelect.addEventListener("change", function () {
+    currentAuthorId = authorSelect.value;
+    clearForm();
+    loadAuthor();
+});
+
+/* KOSONGKAN BORANG */
+function clearForm() {
+    document.getElementById("nama").value = "";
+    document.getElementById("peranan").value = "";
+    document.getElementById("biodata").value = "";
+    document.getElementById("pendidikan").value = "";
+    document.getElementById("kerjaya").value = "";
+    document.getElementById("karya").value = "";
+    document.getElementById("pencapaian").value = "";
+}
 
 /* AMBIL DATA DARIPADA GOOGLE SHEETS */
 async function loadAuthor() {
@@ -39,7 +59,13 @@ async function loadAuthor() {
         });
 
         if (!author) {
-            alert("Maklumat penulis tidak dijumpai.");
+            alert(
+                "Data " +
+                currentAuthorId +
+                " belum dimasukkan dalam Google Sheets."
+            );
+
+            clearForm();
             return;
         }
 
@@ -74,7 +100,7 @@ async function loadAuthor() {
     }
 }
 
-/* SIMPAN DATA */
+/* SIMPAN DATA KE GOOGLE SHEETS */
 saveBtn.addEventListener("click", async function () {
     const payload = {
         id: currentAuthorId,
