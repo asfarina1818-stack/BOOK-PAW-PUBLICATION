@@ -244,7 +244,7 @@ Customize
 
 </div>
 
-    <div class="author-grid">
+ <div class="author-grid" id="authorGrid">
 
        <div class="card">
 
@@ -433,7 +433,7 @@ Customize
 
 <script src="theme.js"></script>
 
-<script>
+
 <script>
 const API_URL =
 "https://script.google.com/macros/s/AKfycbwXG94LnH_8srGevCU8A42thnM_oRN8QCMwi_e7RZXI9Lt9ZmchPI64t3RzLDdoUIqS/exec";
@@ -544,68 +544,6 @@ document.addEventListener("DOMContentLoaded", loadAuthors);
 </script>
 
 <script src="theme.js"></script>
-</script>
-
-</body>
-</html><script src="theme.js"></script>
-
-<script>
-const API_URL =
-"https://script.google.com/macros/s/AKfycbwXG94LnH_8srGevCU8A42thnM_oRN8QCMwi_e7RZXI9Lt9ZmchPI64t3RzLDdoUIqS/exec";
-
-fetch(API_URL + "?time=" + Date.now())
-    .then(response => response.json())
-    .then(data => {
-        const syak = data.find(author =>
-            String(author.id).trim().toUpperCase() === "SYAK"
-        );
-
-        if (!syak) {
-            alert("Data SYAK tidak dijumpai dalam Google Sheets.");
-            return;
-        }
-
-        const cards = document.querySelectorAll(".author-grid .card");
-
-        cards.forEach(card => {
-            const name = card.querySelector("h3");
-
-            if (
-                name &&
-                name.textContent.trim().toLowerCase() === "syak mazlan"
-            ) {
-                const role = card.querySelector("p");
-                const image = card.querySelector("img");
-                const button = card.querySelector(".more-btn");
-
-                name.textContent = String(syak.NAMA || "Syak Mazlan").trim();
-
-                role.textContent =
-                    String(syak.PERANAN || "Penulis Blink Book").trim();
-
-                const imagePath = String(syak.GAMBAR || "").trim();
-
-                if (imagePath) {
-                    image.src = imagePath;
-                }
-
-                button.onclick = function () {
-                    openAuthorPopup(
-                        String(syak.NAMA || "").trim(),
-                        String(syak.BIODATA || "").trim(),
-                        imagePath,
-                        "syak.html"
-                    );
-                };
-            }
-        });
-    })
-    .catch(error => {
-        alert("Google Sheets gagal disambungkan.");
-        console.error(error);
-    });
-</script>
 
 </body>
 </html>
-
